@@ -1,0 +1,21 @@
+---
+pageable: true
+per_page: 10
+---
+
+- if paginate && num_pages > 1
+  %p
+    Page #{page_number} of #{num_pages}
+  - if prev_page
+    %p= link_to 'Previous page', prev_page
+- page_articles.each_with_index do |article, i|
+  .blog-entry
+    %time.blog-entry__time= article.date.strftime('%Y/%m/%d')
+    %h2.blog-entry__title
+      = link_to(article.title, article, class: "blog-entry__link")
+    .blog-entry__article= article.summary(200)
+    %footer.blog-entry__footer= link_to 'Read More', article.url, class: "blog-entry__read-more"
+
+- if paginate
+  - if next_page
+    %p= link_to 'Next page', next_page
