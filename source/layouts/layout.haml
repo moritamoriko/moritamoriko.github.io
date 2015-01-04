@@ -21,7 +21,16 @@
             = link_to( "archive", "http://yahoo.co.jp", target: "_blank", class: "nav__link")
           %li
             = link_to( "product", "http://yahoo.co.jp", target: "_blank", class: "nav__link")
-      = yield
+
+      - if current_article
+        %time.blog-entry__time= current_article.date.strftime('%Y/%m/%d')
+        %h2.blog-entry__title
+          = link_to(current_article.title, current_article, class: "blog-entry__link")
+        = yield
+
+      - else
+        = yield
+
     %footer.footer-contents
       %aside.aside
         %ul.aside__contents
