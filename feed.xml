@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/blog</id>
+  <link href="http://blog.url.com/blog"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2014-12-18T00:00:00+09:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>上空に強い寒気が上空に強い寒気が</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/12/18/02/"/>
+    <id>http://blog.url.com/blog/2014/12/18/02/</id>
+    <published>2014-12-18T00:00:00+09:00</published>
+    <updated>2014-12-30T14:06:24+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;気象庁によると、上空に強い寒気が流れ込む中、低気圧は北海道の東海上をゆっくりと南東へ進んでいる。沿岸部を中心に非常に風が強く、最大瞬間風速は、山形県酒田市で３２．６メートル▽東京都三宅村３１メートル▽新潟県佐渡市３０．５メートル▽北海道稚内市２８．２メートル－－をそれぞれ観測した。&lt;/p&gt;
+
+&lt;p&gt;一方、北海道や東北、北陸の山沿いを中心に大雪となり、１８日午前９時までの主な２４時間降雪量は、北海道上川町８２センチ▽福島県南会津町７１センチ▽群馬県みなかみ町６４センチ▽新潟県湯沢町５７センチ－－など。&lt;/p&gt;
+
+&lt;p&gt;このうち、北海道では太平洋側やオホーツク海側を中心に暴風雪が続き、午前８時現在、遠軽（えんがる）町で４８人、美幌（びほろ）町で３３人など東部を中心に計２３８人が公共施設に避難している。北海道電力によると、停電は延べ２万６４戸。ＪＲ北海道は１８日、札幌と網走、稚内を結ぶ特急１０本など計１４２本の運休を決めた。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>上空に強い寒気が上空に強い寒気が</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2014/12/18/01/"/>
+    <id>http://blog.url.com/blog/2014/12/18/01/</id>
+    <published>2014-12-18T00:00:00+09:00</published>
+    <updated>2014-12-30T14:06:24+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;気象庁によると、上空に強い寒気が流れ込む中、低気圧は北海道の東海上をゆっくりと南東へ進んでいる。沿岸部を中心に非常に風が強く、最大瞬間風速は、山形県酒田市で３２．６メートル▽東京都三宅村３１メートル▽新潟県佐渡市３０．５メートル▽北海道稚内市２８．２メートル－－をそれぞれ観測した。&lt;/p&gt;
+
+&lt;p&gt;一方、北海道や東北、北陸の山沿いを中心に大雪となり、１８日午前９時までの主な２４時間降雪量は、北海道上川町８２センチ▽福島県南会津町７１センチ▽群馬県みなかみ町６４センチ▽新潟県湯沢町５７センチ－－など。&lt;/p&gt;
+
+&lt;p&gt;このうち、北海道では太平洋側やオホーツク海側を中心に暴風雪が続き、午前８時現在、遠軽（えんがる）町で４８人、美幌（びほろ）町で３３人など東部を中心に計２３８人が公共施設に避難している。北海道電力によると、停電は延べ２万６４戸。ＪＲ北海道は１８日、札幌と網走、稚内を結ぶ特急１０本など計１４２本の運休を決めた。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Example Article</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2012/01/01/01/"/>
+    <id>http://blog.url.com/blog/2012/01/01/01/</id>
+    <published>2012-01-01T00:00:00+09:00</published>
+    <updated>2014-12-30T14:06:24+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!This is an example article. You probably want to delete it and write your own articles!&lt;/p&gt;
+</content>
+  </entry>
+</feed>
