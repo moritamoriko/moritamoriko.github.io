@@ -39,18 +39,23 @@
           %li.aside__menu
             %h2.menu__title entry
             - blog.articles[0...10].each do |article|
-              %p.menu__lists
-                = link_to(article.title, article, class: "menu__link")
-                %span= article.date.strftime('%b %e')
+              %ul.menu__list-box
+                %li.menu__list
+                  %p.menu__entry-time= article.date.strftime('%Y/%m/%d')
+                  %p.menu__entry= link_to(article.title, article, class: "menu__link")
           %li.aside__menu
             %h2.menu__title tag
             - blog.tags.each do |tag, articles|
-              %p.menu__lists
-                = link_to( "#{tag} (#{articles.size})", tag_path(tag), class: "menu__link")
+              %ul.menu__list-box
+                %li.menu__list
+                  %p.menu__lists
+                    = link_to( "#{tag} (#{articles.size})", tag_path(tag), class: "menu__link")
           %li.aside__menu
             %h2.menu__title year
             - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-              %p.menu__lists= link_to("#{year} (#{articles.size})", blog_year_path(year), class: "menu__link")
+              %ul.menu__list-box
+                %li.menu__list
+                  %p.menu__lists= link_to("#{year} (#{articles.size})", blog_year_path(year), class: "menu__link")
     %small.footer
       Copyright©
       = link_to( "@#{data.site.twitter_id}", "https://twitter.com/#{data.site.twitter_id}/", target: "_blank", class: "white-link" )
