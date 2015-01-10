@@ -15,8 +15,7 @@ per_page: 12
     - page_articles.each_with_index do |article, i|
       %li.archive__iteme
         %time.archive__article-date= article.date.strftime('%Y/%m/%d')
-        %p.archive__article-title= link_to(article.title, current_article, class: "sub-blog-entry__link")
-
+        %p.archive__article-title= link_to(article.title, article, class: "article__link")
   - if paginate
     - if next_page
       %p= link_to 'Next page', next_page
