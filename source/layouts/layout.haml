@@ -26,13 +26,18 @@
             = link_to( "works", "#", class: "nav__link")
 
       - if current_article
-        %time.blog-article__time= current_article.date.strftime('%Y/%m/%d')
-        %h2.blog-article__title
-          = link_to(current_article.title, current_article, class: "blog-article__link")
-        .blog-article-content
-          = yield
+        %article
+          %time.blog-article__time= current_article.date.strftime('%Y/%m/%d')
+          %h1.blog-article__title
+            = link_to(current_article.title, current_article, class: "blog-article__link")
+          .blog-article-content
+            = yield
       - elsif current_page
-        = yield
+        %article.archive
+          %h1.archive__title
+            = current_page.data.title
+          .blog-article-content
+            = yield
       - else
         = yield
 
