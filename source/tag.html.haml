@@ -5,7 +5,7 @@ per_page: 12
 
 .archive
   %h1.archive__title
-    「 #{tagname} 」のtagが付いた記事
+    Tag of “#{tagname}”
   - if paginate && num_pages > 1
     %p
       Page #{page_number} of #{num_pages}

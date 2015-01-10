@@ -7,6 +7,7 @@
       Blog Title#{' - ' + current_article.title unless current_article.nil?}
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     = stylesheet_link_tag "application"
+    = stylesheet_link_tag "highlight"
   %body{class: page_classes}
     .main-contents
       %header.header
@@ -18,18 +19,20 @@
       %nav.nav
         %ul.nav__lists
           %li
-            = link_to( "home", "/", target: "_blank", class: "nav__link")
+            = link_to( "home", "/", class: "nav__link")
           %li
-            = link_to( "about", "#", target: "_blank", class: "nav__link")
+            = link_to( "about", "/pages/about", class: "nav__link")
           %li
-            = link_to( "works", "#", target: "_blank", class: "nav__link")
+            = link_to( "works", "#", class: "nav__link")
 
       - if current_article
-        %time.blog-entry__time= current_article.date.strftime('%Y/%m/%d')
-        %h2.blog-entry__title
-          = link_to(current_article.title, current_article, class: "blog-entry__link")
+        %time.blog-article__time= current_article.date.strftime('%Y/%m/%d')
+        %h2.blog-article__title
+          = link_to(current_article.title, current_article, class: "blog-article__link")
+        .blog-article-content
+          = yield
+      - elsif current_page
         = yield
-
       - else
         = yield
 
@@ -41,8 +44,8 @@
             - blog.articles[0...10].each do |article|
               %ul.menu__list-box
                 %li.menu__list
-                  %p.menu__entry-time= article.date.strftime('%Y/%m/%d')
-                  %p.menu__entry= link_to(article.title, article, class: "menu__link")
+                  %p.menu__article-time= article.date.strftime('%Y/%m/%d')
+                  %p.menu__article= link_to(article.title, article, class: "menu__link")
           %li.aside__menu
             %h2.menu__title tag
             - blog.tags.each do |tag, articles|

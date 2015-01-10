@@ -27,6 +27,7 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", layout: false
+activate :syntax, :line_numbers => true
 
 ###
 # Compass

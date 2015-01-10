@@ -9,6 +9,7 @@ gem 'middleman-deploy'
 gem "redcarpet", "~> 3.0.0"
 gem "middleman-minify-html"
 gem "middleman-livereload"
+gem "middleman-syntax"
 gem "nokogiri"
 
 # For feed.xml.builder
