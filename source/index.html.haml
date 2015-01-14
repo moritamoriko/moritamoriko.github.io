@@ -13,7 +13,7 @@ per_page: 10
     %time.blog-article__time= article.date.strftime('%Y/%m/%d')
     %h2.blog-article__title
       = link_to(article.title, article, class: "blog-article__link")
-    .blog-article__article.blog-article-content= article.summary(200)
+    .blog-article__article.blog-article-content= article.summary(250)
     %footer.blog-article__footer= link_to 'Read More', article.url, class: "blog-article__read-more"
 
 - if paginate
