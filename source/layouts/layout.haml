@@ -6,6 +6,8 @@
     %title
       morikoblog#{' - ' + current_article.title unless current_article.nil?}
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
+    = javascript_include_tag  "//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+    = javascript_include_tag "application"
     = stylesheet_link_tag "application"
     = stylesheet_link_tag "highlight"
   %body{class: page_classes}

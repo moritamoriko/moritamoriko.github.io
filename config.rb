@@ -27,7 +27,7 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", layout: false
-activate :syntax, :line_numbers => true
+activate :syntax, line_numbers: true
 
 ###
 # Compass
@@ -65,8 +65,8 @@ activate :syntax, :line_numbers => true
 
 activate :directory_indexes
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
-set :haml, { :ugly => true, :format => :html5 }
+set :markdown, fenced_code_blocks: true, smartypants: true, autolink: true, tables: true
+set :haml, { ugly: true, format: :html5 }
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
