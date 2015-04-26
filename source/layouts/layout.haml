@@ -29,6 +29,7 @@
             = link_to( "works", "#", class: "nav__link")
 
       - if current_article
+        -# ここはブログの記事個別
         %article.blog-article
           %time.blog-article__time= current_article.date.strftime('%Y/%m/%d')
           %h1.blog-article__title
@@ -36,36 +37,37 @@
           .blog-article-content
             = yield
       - elsif page?
+        -# ここはページ（/pages/hoge.html）
         %article.page
           %h1.archive__title
             = current_page.data.title
           .blog-article-content
             = yield
       - else
-        %article.blog-article
-          %h1.archive__title
-            = current_page.data.title
-          .blog-article-content
-            = yield
+        -# ここはブログの記事一覧（TOPページ含む）
+        %h1.archive__title
+          = current_page.data.title
+        .blog-article-content
+          = yield
     %footer.footer-contents
       %aside.aside
         %ul.aside__contents
           %li.aside__menu
-            %h2.menu__title entry
+            %h2.menu__title.is-lobster entry
             - blog.articles[0...10].each do |article|
               %ul.menu__list-box
                 %li.menu__list
                   %p.menu__article-time= article.date.strftime('%Y/%m/%d')
                   %p.menu__article= link_to(article.title, article, class: "menu__link")
           %li.aside__menu
-            %h2.menu__title tag
+            %h2.menu__title.is-lobster tag
             - blog.tags.each do |tag, articles|
               %ul.menu__list-box
                 %li.menu__list
                   %p.menu__lists
                     = link_to( "#{tag} (#{articles.size})", tag_path(tag), class: "menu__link")
           %li.aside__menu
-            %h2.menu__title year
+            %h2.menu__title.is-lobster year
             - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
               %ul.menu__list-box
                 %li.menu__list

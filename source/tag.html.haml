@@ -3,19 +3,22 @@ pageable: true
 per_page: 12
 ---
 
+%header.archive__header
+  %h1.archive__title
+    Tag of “#{tagname}”
 
-%h1.archive__title
-  Tag of “#{tagname}”
 - if paginate && num_pages > 1
-  %p
+  %p.paginate
     Page #{page_number} of #{num_pages}
   - if prev_page
     %p= link_to 'Previous page', prev_page
-%ul.archive__itemes
-  - page_articles.each_with_index do |article, i|
-    %li.archive__iteme
-      %time.archive__article-date= article.date.strftime('%Y/%m/%d')
-      %p.archive__article-title= link_to(article.title, article, class: "article__link")
+
+- page_articles.each_with_index do |article, i|
+  %article.blog-article
+    %time.archive__article-date= article.date.strftime('%Y/%m/%d')
+    %p.archive__article-title= link_to(article.title, article, class: "article__link")
+
+
 - if paginate
   - if next_page
-    %p= link_to 'Next page', next_page
+    %p.paginate= link_to 'Next page', next_page
