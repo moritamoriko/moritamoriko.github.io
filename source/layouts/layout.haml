@@ -35,15 +35,18 @@
             = link_to(current_article.title, current_article, class: "blog-article__link")
           .blog-article-content
             = yield
-      - elsif current_page
-        %article.archive
+      - elsif page?
+        %article.page
           %h1.archive__title
             = current_page.data.title
           .blog-article-content
             = yield
       - else
-        = yield
-
+        %article.archive
+          %h1.archive__title
+            = current_page.data.title
+          .blog-article-content
+            = yield
     %footer.footer-contents
       %aside.aside
         %ul.aside__contents
