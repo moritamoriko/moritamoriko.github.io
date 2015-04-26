@@ -14,7 +14,7 @@ img
 
 .main-contents
   margin: 0 auto
-  width: 1000px
+  max-width: 1000px
 
 header
   margin: 0 auto
@@ -40,10 +40,13 @@ header
 .nav
   text-align: center
   margin-bottom: 80px
-
+  @media screen and (max-width: #{$break-point})
+    margin-bottom: 40px
 .nav__lists
   font-size: 24px
   color: $textcolor
+  @media screen and (max-width: #{$break-point})
+    font-size: 32px
 
 .nav__lists li
   +inline-block
@@ -62,10 +65,12 @@ header
   margin-top: 120px
   background: $bgcolor-02
   //background: $bgcolor-02 image_url("fotter-contents_bg.png") repeat-x
+  @media screen and (max-width: #{$break-point})
+    margin-top: 0
 
 .aside
   margin: 0 auto
-  width: 1000px
+  max-width: $max-width
 
 .aside__contents
   margin: 0 auto
@@ -77,6 +82,10 @@ header
   +inline-block
   +float-left
   width: 33%
+  @media screen and (max-width: #{$break-point})
+    display: block
+    float: none
+    width: 100%
 
 .menu__title
   color: $keycolor-01

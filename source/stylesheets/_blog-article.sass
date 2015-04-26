@@ -1,5 +1,7 @@
 .blog-article-content
   margin: 0 20px
+  @media screen and (max-width: #{$break-point})
+    margin: 0
 
 .blog-article-content
   h2
@@ -29,6 +31,27 @@
     font-family: 'Ubuntu Mono'
     border: $keycolor-02 1px solid
     border-left: $keycolor-02 10px solid
+    overflow-x: auto
+    overflow-y: hidden
+    @media screen and (max-width: #{$break-point})
+      margin: 0
+      width: 100%
+
 
   .highlight .gutter
-    padding: 5px 20px
+    padding: 5px 10px
+    position: absolute
+    z-index: 1
+    background-color: #f8f8f8
+    box-sizing: border-box
+    width: 40px
+    box-shadow: rgba(black, .1) 1px 0 2px
+    @media screen and (max-width: #{$break-point})
+      padding: 5px 10px
+      width: 30px
+
+
+  .highlight .code pre
+    padding-left: 40px
+    @media screen and (max-width: #{$break-point})
+      padding-left: 30px
