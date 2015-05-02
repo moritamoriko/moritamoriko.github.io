@@ -1,0 +1,22 @@
+.global-nav
+  text-align: center
+  margin-bottom: 80px
+  @media screen and (max-width: #{$break-point})
+    margin-bottom: 40px
+.global-nav__lists
+  font-size: 24px
+  color: $textcolor
+  @media screen and (max-width: #{$break-point})
+    font-size: 32px
+
+.global-nav__lists li
+  +inline-block
+  &:after
+    content: " |"
+  &:last-child
+    &:after
+      content: none
+
+.global-nav__link
+  color: $textcolor
+  +hover-link

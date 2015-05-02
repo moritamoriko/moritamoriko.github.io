@@ -1,0 +1,39 @@
+// .footer-nav
+.footer-nav
+  margin: 0 auto
+  max-width: $max-width
+
+.footer-nav__menus
+  margin: 0 auto
+  padding: 0 20px
+  +clearfix
+
+// .footer-nav-menu
+.footer-nav-menu
+  margin-top: 20px
+  +inline-block
+  +float-left
+  width: 33%
+  @media screen and (max-width: #{$break-point})
+    display: block
+    float: none
+    width: 100%
+
+.footer-nav-menu__title
+  color: $keycolor-01
+  font-weight: bold
+  font-size: 26px
+  margin-bottom: 14px
+
+.footer-nav-menu__items
+  margin-bottom: 10px
+  margin-right: 20px
+
+.footer-nav-menu__item-time
+  font-size: 16px
+  line-height: 1.4
+
+.footer-nav-menu__item-link
+  color: $textcolor
+  text-decoration: underline
+  font-weight: bold

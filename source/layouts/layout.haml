@@ -21,67 +21,33 @@
       ga('send', 'pageview');
 
   %body{class: page_classes}
-    .main-contents
-      %header.header
-        =image_tag('title.png', class: "header__image")
-        %h1.header__title= data.site.title
-        %h2.header__white
-          @
-          = data.site.twitter_id
-      %nav.nav
-        %ul.nav__lists
-          %li
-            = link_to( "home", "/", class: "nav__link")
-          %li
-            = link_to( "about", "/pages/about", class: "nav__link")
-          %li
-            = link_to( "works", "#", class: "nav__link")
-
+    = partial "layouts/header"
+    = partial "layouts/global_nav"
+    %main.main
       - if current_article
         -# ここはブログの記事個別
         %article.blog-article
           %time.blog-article__time= current_article.date.strftime('%Y/%m/%d')
           %h1.blog-article__title
             = link_to(current_article.title, current_article, class: "blog-article__link")
-          .blog-article-content
+          .content
             = yield
       - elsif page?
         -# ここはページ（/pages/hoge.html）
         %article.page
-          %h1.archive__title
-            = current_page.data.title
-          .blog-article-content
+          %h1.page__title= current_page.data.title
+          .content
             = yield
       - else
         -# ここはブログの記事一覧（TOPページ含む）
-        %h1.archive__title
-          = current_page.data.title
-        .blog-article-content
-          = yield
-    %footer.footer-contents
-      %aside.aside
-        %ul.aside__contents
-          %li.aside__menu
-            %h2.menu__title.is-lobster entry
-            - blog.articles[0...10].each do |article|
-              %ul.menu__list-box
-                %li.menu__list
-                  %p.menu__article-time= article.date.strftime('%Y/%m/%d')
-                  %p.menu__article= link_to(article.title, article, class: "menu__link")
-          %li.aside__menu
-            %h2.menu__title.is-lobster tag
-            - blog.tags.each do |tag, articles|
-              %ul.menu__list-box
-                %li.menu__list
-                  %p.menu__lists
-                    = link_to( "#{tag} (#{articles.size})", tag_path(tag), class: "menu__link")
-          %li.aside__menu
-            %h2.menu__title.is-lobster year
-            - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-              %ul.menu__list-box
-                %li.menu__list
-                  %p.menu__lists= link_to("#{year} (#{articles.size})", blog_year_path(year), class: "menu__link")
-    %small.footer
-      Copyright©
-      = link_to( "@#{data.site.twitter_id}", "https://twitter.com/#{data.site.twitter_id}/", target: "_blank", class: "white-link" )
-      2015 All Rights Reserved.
+        .page
+          %h1.page__title= current_page.data.title
+          .content
+            = yield
+
+    %footer.footer
+      = partial 'layouts/footer_nav'
+      %small.footer__author
+        Copyright©
+        = link_to( "@#{data.site.twitter_id}", "https://twitter.com/#{data.site.twitter_id}/", target: "_blank", class: "white-link" )
+        2015 All Rights Reserved.
