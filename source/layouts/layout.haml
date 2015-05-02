@@ -22,7 +22,7 @@
 
   %body{class: page_classes}
     = partial "layouts/header"
-    = partial "layouts/global_nav"
+    = partial "layouts/sns_links"
     %main.main
       - if current_article
         -# ここはブログの記事個別
@@ -44,7 +44,6 @@
           %h1.page__title= current_page.data.title
           .content
             = yield
-
     %footer.footer
       = partial 'layouts/footer_nav'
       %small.footer__author
