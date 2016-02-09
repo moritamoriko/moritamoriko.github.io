@@ -1,7 +1,7 @@
 # Deploy
 
 ``` shell
-$ npm run deploy
+$ hexo deploy -g
 ```
 
 # 注意
