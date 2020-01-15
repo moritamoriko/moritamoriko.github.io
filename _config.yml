@@ -71,3 +71,9 @@ deploy:
   type: git
   repo: git@github.com:moritamoriko/moritamoriko.github.io.git
   branch: master
+
+# captioned: false. Hide the captions of all instagrams.
+# width: set the width of all instagrams
+tagInstagram:
+  captioned: false
+  width: 50%
